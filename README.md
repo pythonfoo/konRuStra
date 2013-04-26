@@ -10,4 +10,6 @@ Zielsetzung:
 * einfach zu verstehender Code
 * leicht anzupassender Code
 * am besten als Packet gepackt
+* einfache Bedienung
+* Lokalisierte Versionen
 
