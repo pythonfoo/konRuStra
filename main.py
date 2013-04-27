@@ -5,7 +5,7 @@ import sys
 import datetime
 import math
 
-class test(object):
+class test(object): # a class to test the main functions
 	def __init__(self):
 		self.mainC = main()
 		self.world = self.mainC.newWorld()
@@ -29,6 +29,7 @@ class test(object):
 	def testGiveEP(self,player,epRangeMin,epRangeMax):
 		player = self.mainC.giveEP(player,random.randint(epRangeMin,epRangeMax))
 		return player
+		
 class main(object):
 	def giveEP(self,player,ep):
 		player['ep'] += ep
