@@ -14,9 +14,9 @@ Zielsetzung:
 * Lokalisierte Versionen
 Der Code soll aus drei einfachen Klassen bestehen:
 
-main : Liefert die Funktionen für den Spielablauf
-test : Testet die Funktionen von main
-play : Reduziert sich auf die für das Spiel wichtigen Funktionen
+main : Liefert die Funktionen für den Spielablauf <br>
+test : Testet die Funktionen von main <br>
+play : Reduziert sich auf die für das Spiel wichtigen Funktionen <br>
 
 
 
