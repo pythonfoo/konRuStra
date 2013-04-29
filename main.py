@@ -1,21 +1,25 @@
+#!/usr/bin/env python
+
 import os
 import time
 import random
 import sys
 import datetime
 import math
-
 		
 class main(object):
 	def giveEP(self,player,ep):
 		player['ep'] += ep
 		return player
+		
 	def giveMoney(self,player,gold):
 		player['money'] = gold 
 		return player
+		
 	def __init__(self):
 		os.system('clear')
 		self.figures = {}
+		
 	def randomCube(self,numOfCube,sizeOfCube):	
 		result = []
 		for i in range(numOfCube):
@@ -25,18 +29,21 @@ class main(object):
 		for i in range(len(result)):
 			res += result[i]
 		return res
+		
 	def printDict(self,dic):
 		for key in dic:
 			print key , dic[key]
+			
 	def printList(self,array):
 		for i in range(len(array)):
 			print array[i]
+			
 	def newWorld(self):
 		world = {}
 		counter = 1
-		for i in range(1,11):
-			for ii in range(1,11):
-				world[counter] = {'x':ii,'y':i,'occ':False,'occFig':None,'threatened':False,'aff':False}
+		for y in range(1,11):
+			for x in range(1,11):
+				world[counter] = {'x':x,'y':y,'occ':False,'occFig':None,'threatened':False,'aff':False}
 				# x: X-coordinate
 				# y: Y-coordinate
 				# occ: Is this field occupied?
@@ -44,6 +51,7 @@ class main(object):
 				# threatened: Is this field threatened by a figure?
 				counter += 1
 		return world
+		
 	def defaultWorld(self):
 		world = self.newWorld()
 		world = self.setFigureOnWorld(world,'soldier',5,8,False)
@@ -51,7 +59,8 @@ class main(object):
 		world = self.setFigureOnWorld(world,'soldier',6,9,False)
 		world = self.setFigureOnWorld(world,'robber',5,9,False)
 		world = self.setFigureOnWorld(world,'wizard',5,10,False)
-		return world	
+		return world
+		
 	def compareTwoWorlds(self,worldOld,worldNew):
 			difrences = []
 			result = {'NOD':0,'Dif':difrences}
@@ -60,6 +69,7 @@ class main(object):
 					result['Dif'].append(worldNew[key])
 					result['NOD'] += 1
 			return result
+			
 	def setFigureOnWorld(self,world,figureDemand,x,y,aff):
 		for key in world:
 			if world[key]['x'] == x and world[key]['y'] == y:
@@ -108,6 +118,7 @@ class main(object):
 							world[key+widTFields[i]]['threatened'] = True
 					
 		return world
+		
 	def newPlayer(self,name,ep,level,money,difficulty,numS,numR,numW):
 		player = {}
 		player['name'] = name
@@ -117,9 +128,11 @@ class main(object):
 		player['inv'] = {'s':numS,'r':numR,'w':numW}
 		player['ep'] = ep
 		return player
+		
 	def defaultPlayer(self):
 		player = self.newPlayer('Human',1,1000,1,0,0,0)
 		return player
+		
 	def newFig(self,name,hp,pp,wd,soa,hpReg,ppReg,price):
 	# name = Name
 	# hp = Healt Point
@@ -136,17 +149,20 @@ class main(object):
 		figures['wizard'] = {'HP':1000,'PP':500,'WD':3,'SoA':40,'HPReg':1,'PPReg':3,'Price':500}
 		return figures
 		# self.printDict(self.figures)
+		
 	def experienceGen(self):
 		EPperLvl = []
 		ep = 1
 		for i in range(21):
 			EPperLvl.append(pow(2,i))
 		return EPperLvl
+		
 	def levelTest(self,expSteps,ep,level):
 		for i in range(len(expSteps)):
 			if ep >= expSteps[i]:
 				level = i + 1
 		return level
+		
 	def trade(self,figures,money,purchase_demand,tmpInv):
 		inv = {'s':tmpInv['s'],'w':tmpInv['w'],'r':tmpInv['r']}
 		gold = money
