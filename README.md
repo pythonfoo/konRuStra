@@ -14,13 +14,23 @@ Ein Rundenbasiertes Strategiespiel in der Konsole.
 * Lokalisierte Versionen
 Der Code soll aus drei einfachen Klassen bestehen:
 
-main : Liefert die Funktionen für den Spielablauf <br>
-test : Testet die Funktionen von main <br>
-       test war für Entwickler gedacht, die ein wenig rumspielen <br>
-       wollen
-play : Reduziert sich auf die für das Spiel wichtigen Funktionen <br>
-       play soll nur Funktionen, die aus test oder main <br>
-       stammen, sinnvoll aufrufen. Wenn möglich auch wieder schön in <br>
-       eine Klasse verpackt. 
+<h5>main</h5> 
+<p>
+Liefert die Funktionen für den Spielablauf <br>
+</p>
 
+<h5>test</h5> 
+<p>
+Testet die Funktionen von main <br>
+test war für Entwickler gedacht, die ein wenig rumspielen <br>
+wollen
+</p>
+
+<h5>play</h5>
+<p>
+Reduziert sich auf die für das Spiel wichtigen Funktionen <br>
+play soll nur Funktionen, die aus test oder main <br>
+stammen, sinnvoll aufrufen. Wenn möglich auch wieder schön in <br>
+eine Klasse verpackt. 
+</p>
 
