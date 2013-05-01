@@ -1,4 +1,11 @@
 KonRuStra
+###########################################################################
+Dieser Text kann als Leitwerk für potenzielle Entwickler gesehen werden, da
+dodonator, der Initiator dieses Projekts, seine Ideen und Wünsche für dieses
+Projekt hier festgehalten hat. Es ist wichtig, dass alle Erweiterungen dieser
+Datei und ihren Inhalt genügen. Es ist das Grundgerüst des Spiels abgebildet
+und trotzdem gibt es noch genug Platz für freie Interpretierung.
+############################################################################
 Auf einem Quadratischen Feld werden Figuren (ähnlich wie beim Schach)
 über verschiedene Felder gespielt.
 Dabei gibt es verschiedene Figurentypen mit unterschiedlichen Attributen,
