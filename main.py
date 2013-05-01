@@ -16,10 +16,29 @@ class main(object):
 		player['money'] = gold 
 		return player
 		
+	def attack(self,oPlayer,dPlayer,oFigure,dFigure):
+		dFigure['HP'] -= int(oFigure['WD'] + oPlayer['lvl'])
+		oFigure['PP'] -= 1
+		return [oFigure,dFigure]
+	
+	def death(self,world,dFigure,oPlayer,dPlayer,field):
+		oPlayer = self.giveEP(oPlayer,random.randint((oPlayer['lvl']-1)*100,oPlayer['lvl']*100))
+		if dFigure['name'] == 'soldier':	
+			dPlayer['inv']['s'] -= 1
+		elif dFigure['name'] == 'robber':
+			dPlayer['inv']['r'] -= 1
+		elif dFigure['name'] == 'wizard':
+			dPlayer['inv']['w'] -= 1	
+		world[field]['occ'] = False
+		world[field]['occFig'] = None
+		world[field]['aff'] = None
+		return {'world':world,'op':oPlayer,'dp':dPlayer}
+
 	def __init__(self):
 		os.system('clear')
 		self.figures = {}
 		
+	
 	def randomCube(self,numOfCube,sizeOfCube):	
 		result = []
 		for i in range(numOfCube):
@@ -43,12 +62,13 @@ class main(object):
 		counter = 1
 		for y in range(1,11):
 			for x in range(1,11):
-				world[counter] = {'x':x,'y':y,'occ':False,'occFig':None,'threatened':False,'aff':False}
+				world[counter] = {'x':x,'y':y,'occ':False,'occFig':None,'threatened':False,'aff':None}
 				# x: X-coordinate
 				# y: Y-coordinate
 				# occ: Is this field occupied?
 				# occFig: Which kind of figure stand on this field?
 				# threatened: Is this field threatened by a figure?
+				# aff: party of the occupied Figure
 				counter += 1
 		return world
 		
