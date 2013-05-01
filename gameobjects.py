@@ -32,7 +32,7 @@ class PlayerHelper(object):
         return self._playerlist
 
     def get_new_Soldier(self):
-        "returns a new Soldier with defaults"
+        "returns a new Soldier with defaults and adds to Playerlist"
         soldier = gamer()
         soldier.hp = 1250
         soldier.pp = 250
@@ -47,7 +47,7 @@ class PlayerHelper(object):
         return soldier
 
     def get_new_Robber(self):
-        "returns a new Robber with defaults"
+        "returns a new Robber with defaults and adds to Playerlist"
         robber = gamer()
         robber.hp = 750
         robber.pp = 750 
@@ -62,7 +62,7 @@ class PlayerHelper(object):
         return robber
 
     def get_new_Wizard(self):
-        "returns a new Wizard with defaults"
+        "returns a new Wizard with defaults and adds to Playerlist"
         wizard = gamer()
         wizard.hp = 1000
         wizard.pp = 500
