@@ -48,6 +48,7 @@ class gamer(Player):
         self._price = 0 # Price
         self._level = 0 # Level
         self._ep = 0 # what ever it is ... ask DoDo
+        self._playertyp = 0 # 1 = soldier, 2 = robber, 3 = wizard 
 
     @property 
     def hp(self): 
@@ -169,6 +170,33 @@ class gamer(Player):
 
         else:
             raise Exception("Error ep has to be type int")
+
+    
+    @property 
+    def playertyp(self):
+        "1 = soldier, 2 = robber, 3 = wizard "
+        if self._wd == 1:
+            return "soldier"
+        elif self._wd == 2:
+            return "robber"
+        elif self._wd == 3:
+            return "wizard"
+        else:
+            return "not defined"
+
+    @playertyp.setter 
+    def playertyp(self, value):
+        if type(value) == str:
+            if value == "soldier":
+                self._playertyp = 1
+            elif value == "robber":
+                self._playertyp = 2
+            elif value == "wizard":
+                self._playertyp = 3
+            else:
+                self._playertyp = 0
+        else:
+            raise Exception("Error playertype has to be type str >> 1 = soldier, 2 = robber, 3 = wizard ")
 
 def main():
     testPlayer = gamer()
