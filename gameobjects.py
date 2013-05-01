@@ -43,7 +43,6 @@ class FiguresHelper(object):
         soldier.hpReg = 3
         soldier.ppReg = 1
         soldier.price = 500
-        soldier.ep = 0
         soldier.figuretyp = "soldier"
         self._figure_add(soldier)
         return soldier
@@ -58,7 +57,6 @@ class FiguresHelper(object):
         robber.hpReg = 2
         robber.ppReg = 2
         robber.price = 500
-        robber.ep = 0
         robber.figuretyp = "robber"
         self._figure_add(robber)
         return robber
@@ -73,7 +71,6 @@ class FiguresHelper(object):
         wizard.hpReg = 1
         wizard.ppReg = 3
         wizard.price = 500
-        wizard.ep = 0
         wizard.figuretyp = "wizard"
         self._figure_add(wizard)
         return wizard
@@ -228,18 +225,6 @@ class gamer(Figure):
             raise Exception("Error level has to be type int")
 
 
-    @property 
-    def ep(self):
-        "ep what ever it is ask DoDo"
-        return self._ep
-
-    @ep.setter 
-    def ep(self, value):
-        if type(value) == int:
-            self._ep = value
-
-        else:
-            raise Exception("Error ep has to be type int")
 
     
     @property 
