@@ -10,7 +10,26 @@ import uuid # UniceIdentify Objects
 class PlayerHelper(object):
     "gives Methods to get default Figures and other Figuremanipulations"
     def __init__(self):
-        pass
+        self._playerlist = {}
+
+    def _player_add(self, playervalue):
+        "add Player to Playerlist"
+        if isinstance(playervalue,Player):
+            self._playerlist[playervalue.playerId] = playervalue
+        else:
+            raise Exception("Error type Player hast to be Player Object")
+    
+    def _player_remove(self, playervalue): 
+        "removes Player from Playerlist"
+        if isinstance(playervalue, Player):
+            self._playerlist.pop(playervalue.playerId, None)
+        else:
+            raise Exception("Error type Player hast to be Player Object")
+
+    def get_Playerlist(self):
+        "returns intern Playerlist - must be replaced by inteligent Methods"
+        #TODO: nomore return of intern Playerlist just uses Methods to manipulate
+        return self._playerlist
 
     def get_new_Soldier(self):
         "returns a new Soldier with defaults"
@@ -24,6 +43,7 @@ class PlayerHelper(object):
         soldier.price = 500
         soldier.ep = 0
         soldier.playertyp = "soldier"
+        self._player_add(soldier)
         return soldier
 
     def get_new_Robber(self):
@@ -38,6 +58,7 @@ class PlayerHelper(object):
         robber.price = 500
         robber.ep = 0
         robber.playertyp = "robber"
+        self._player_add(robber)
         return robber
 
     def get_new_Wizard(self):
@@ -52,6 +73,7 @@ class PlayerHelper(object):
         wizard.price = 500
         wizard.ep = 0
         wizard.palyertyp = "wizard"
+        self._player_add(wizard)
         return wizard
 
 class Player(object):
@@ -249,8 +271,14 @@ def main():
 
     testPlayer = Phelper.get_new_Wizard()
     testPlayer.name = "Oerb"
-    print testPlayer.playertyp, testPlayer.playerId, testPlayer.name, testPlayer.hp, testPlayer.pp
-
+    testPlayer2 = Phelper.get_new_Soldier()
+    testPlayer2.name = "DoDo"
+    # print testPlayer.playertyp, testPlayer.playerId, testPlayer.name, testPlayer.hp, testPlayer.pp
+    playerlist = Phelper.get_Playerlist()
+    print "The Player UUID's are: " , playerlist.keys()
+    print 2*"\n"
+    for playerkey in playerlist.keys():
+        print playerlist[playerkey].name, playerlist[playerkey].playertyp
 
 if __name__ == "__main__":
     main()
