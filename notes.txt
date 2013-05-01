@@ -39,3 +39,5 @@ Figure:
 * Kann für Geld vom Spieler gekauft werden
 * Ihre Attribute verbessern sich durch Levelanstieg des Spielers
 ############################################################################
+Dieses Projekt benutzt zum Einrücken Tabs und ist in Python 2.7 geschrieben!
+############################################################################
