@@ -41,6 +41,13 @@ class gamer(Player):
         super(gamer, self).__init__()
         self._hp = 0 # Health Points
         self._pp = 0 # Perseverance Point
+        self._wd = 0 # Weapon Distance
+        self._soa = 0 # Strength of arms
+        self._hpReg = 0 # Health Point Recharge
+        self._ppReg = 0 # Perseverance Point Recharge
+        self._price = 0 # Price
+        self._level = 0 # Level
+        self._ep = 0 # what ever it is ... ask DoDo
 
     @property 
     def hp(self): 
@@ -66,10 +73,102 @@ class gamer(Player):
         else:
             raise Exception("Error pp has to be type int")
 
+    @property 
+    def wd(self):
+        "Weapon Distance"
+        return self._wd
+
+    @wd.setter 
+    def wd(self, value):
+        if type(value) == int:
+            self._wd = value
+
+        else:
+            raise Exception("Error wd has to be type int")
 
 
 
+    @property 
+    def soa(self):
+        "Strength of arms"
+        return self._soa
 
+    @soa.setter 
+    def soa(self, value):
+        if type(value) == int:
+            self._soa = value
+
+        else:
+            raise Exception("Error soa has to be type int")
+
+
+    @property 
+    def hpReg(self):
+        "Health Point Recharge"
+        return self._hpReg
+
+    @hpReg.setter 
+    def hpReg(self, value):
+        if type(value) == int:
+            self._hpReg = value
+
+        else:
+            raise Exception("Error hpReg has to be type int")
+
+    @property 
+    def ppReg(self):
+        "Perseverance Point Recharge"
+        return self._ppReg
+
+    @ppReg.setter 
+    def ppReg(self, value):
+        if type(value) == int:
+            self._ppReg = value
+
+        else:
+            raise Exception("Error ppReg has to be type int")
+
+
+    @property 
+    def price(self):
+        "Price"
+        return self._price
+
+    @price.setter 
+    def price(self, value):
+        if type(value) == int:
+            self._price = value
+
+        else:
+            raise Exception("Error price has to be type int")
+
+
+    @property 
+    def level(self):
+        "Level"
+        return self._level
+
+    @level.setter 
+    def level(self, value):
+        if type(value) == int:
+            self._level = value
+
+        else:
+            raise Exception("Error level has to be type int")
+
+
+    @property 
+    def ep(self):
+        "ep what ever it is ask DoDo"
+        return self._ep
+
+    @ep.setter 
+    def ep(self, value):
+        if type(value) == int:
+            self._ep = value
+
+        else:
+            raise Exception("Error ep has to be type int")
 
 def main():
     testPlayer = gamer()
