@@ -14,3 +14,7 @@ Jede Figur hat einen Waffenschaden, pro Runde zieht eine Figur der angegriffenen
 Figur ihren Waffenschaden an Gesundheitspunkten ab. Dabei ist es von der Ausdauer
 abhängig wie oft eine Figur hintereinander angreifen kann. Pro Runde regenerieren
 sich Gesundheit und Ausdauer.
+Dabei müssen Spieler und Figuren getrennt werden. Ein Spieler, ob Bot oder menschlicher
+Spieler, kann mehrere Figuren besitzen und ein Spieler hat auch andere Attribute als
+eine Figur. Wichtig ist auch das jedes Feld auf der Karte auch gewisse Attribute 
+besitzt. Beispielsweise die Position oder die Figur, die sich auf ihr befindet.
