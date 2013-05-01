@@ -1,0 +1,16 @@
+KonRuStra
+Auf einem Quadratischen Feld werden Figuren (ähnlich wie beim Schach)
+über verschiedene Felder gespielt.
+Dabei gibt es verschiedene Figurentypen mit unterschiedlichen Attributen,
+wie zum Beispiel Gesundheitspunkte, Ausdauerpunkte, Waffenreichweite,
+Gesundheitsregenerationsrate, Ausdauerregenerationsrate, Waffenschaden
+und Preis.
+Der Spieler bekommt zu Anfang Geld, mit dem er sich neue Figuren kaufen
+kann. Für jede getötete gegnerische Figur bekommt er Erfahrungspunkte, mit
+denen er Level aufsteigen kann. Pro aufgestiegenes Level verbessern sich
+einige Attribute des Spielers und der Figuren. 
+Der Spieler kann Runde für Runde Figuren bewegen, oder andere Figuren angreifen.
+Jede Figur hat einen Waffenschaden, pro Runde zieht eine Figur der angegriffenen
+Figur ihren Waffenschaden an Gesundheitspunkten ab. Dabei ist es von der Ausdauer
+abhängig wie oft eine Figur hintereinander angreifen kann. Pro Runde regenerieren
+sich Gesundheit und Ausdauer.
