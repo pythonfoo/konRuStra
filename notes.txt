@@ -55,3 +55,8 @@ Name: Player
 Typ: Dictonary
 Inhalt: Eigenschaften des Spielers wie z.B. Name, Geld oder Level
 ############################################################################
+Es ist eine besondere Eigenschaft und auch ein Alleinstellungsmerkmal dieses
+Projektes, dass es keine Spieleengine oder extra zu installierende Bibliothek
+benutzt, um dem Nutzer größtmöglichen Komfort zu liefern. Dieser Grundsatz
+soll beim Entwickeln beachtet werden.
+############################################################################ 
