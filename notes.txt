@@ -25,3 +25,17 @@ Dabei müssen Spieler und Figuren getrennt werden. Ein Spieler, ob Bot oder mens
 Spieler, kann mehrere Figuren besitzen und ein Spieler hat auch andere Attribute als
 eine Figur. Wichtig ist auch das jedes Feld auf der Karte auch gewisse Attribute 
 besitzt. Beispielsweise die Position oder die Figur, die sich auf ihr befindet.
+############################################################################
+Unterschied zwischen Player und Figures:
+Player:
+* Entweder ein Mensch oder eine AI
+* Steuert Figuren über die Welt
+* Kann für Geld Figuren kaufen
+* Steigt durch Erfahrungspunkte Level auf
+* Kann mehrere Figuren besitzen
+Figure:
+* Steht auf dem Feld und bedroht dadurch, abhängig von der Waffenreichweite, verschiedene
+  andere Felder, die sie angreifen kann
+* Kann für Geld vom Spieler gekauft werden
+* Ihre Attribute verbessern sich durch Levelanstieg des Spielers
+############################################################################
