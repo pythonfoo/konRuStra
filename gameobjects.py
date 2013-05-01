@@ -5,31 +5,33 @@ __author__ = "oerb"
 __copyright__ = "GPL 2013"
 __license__ = "GPL" 
 
+__all__ = ["PlayerHelper"]
+
 import uuid # UniceIdentify Objects
 
-class PlayerHelper(object):
+class FiguresHelper(object):
     "gives Methods to get default Figures and other Figuremanipulations"
     def __init__(self):
-        self._playerlist = {}
+        self._figurelist = {}
 
-    def _player_add(self, playervalue):
+    def _figure_add(self, figurevalue):
         "add Player to Playerlist"
-        if isinstance(playervalue,Player):
-            self._playerlist[playervalue.playerId] = playervalue
+        if isinstance(figurevalue,Figure):
+            self._figurelist[figurevalue.figureId] = figurevalue
         else:
-            raise Exception("Error type Player hast to be Player Object")
+            raise Exception("Error type Player hast to be instance of Player Object")
     
-    def _player_remove(self, playervalue): 
+    def figure_remove(self, figurevalue): 
         "removes Player from Playerlist"
-        if isinstance(playervalue, Player):
-            self._playerlist.pop(playervalue.playerId, None)
+        if isinstance(figurevalue, Figure):
+            self._figurelist.pop(figurevalue.figureId, None)
         else:
-            raise Exception("Error type Player hast to be Player Object")
+            raise Exception("Error type Player hast to be instance Player Object")
 
-    def get_Playerlist(self):
+    def get_Figurelist(self):
         "returns intern Playerlist - must be replaced by inteligent Methods"
         #TODO: nomore return of intern Playerlist just uses Methods to manipulate
-        return self._playerlist
+        return self._figurelist
 
     def get_new_Soldier(self):
         "returns a new Soldier with defaults and adds to Playerlist"
@@ -42,8 +44,8 @@ class PlayerHelper(object):
         soldier.ppReg = 1
         soldier.price = 500
         soldier.ep = 0
-        soldier.playertyp = "soldier"
-        self._player_add(soldier)
+        soldier.figuretyp = "soldier"
+        self._figure_add(soldier)
         return soldier
 
     def get_new_Robber(self):
@@ -57,8 +59,8 @@ class PlayerHelper(object):
         robber.ppReg = 2
         robber.price = 500
         robber.ep = 0
-        robber.playertyp = "robber"
-        self._player_add(robber)
+        robber.figuretyp = "robber"
+        self._figure_add(robber)
         return robber
 
     def get_new_Wizard(self):
@@ -72,21 +74,21 @@ class PlayerHelper(object):
         wizard.ppReg = 3
         wizard.price = 500
         wizard.ep = 0
-        wizard.palyertyp = "wizard"
-        self._player_add(wizard)
+        wizard.figuretyp = "wizard"
+        self._figure_add(wizard)
         return wizard
 
-class Player(object):
-    """ Dataclass for every Player to store and give data to every Player"""
+class Figure(object):
+    """ Dataclass for every Figure to store and give data to every Figure"""
     def __init__(self):
 
-        self._playerId = uuid.uuid4()
+        self._figureId = uuid.uuid4()
         self._name = ""
 
     @property 
-    def playerId(self): 
-        " Returns the Player UUID"    
-        return self._playerId 
+    def figureId(self): 
+        " Returns the Figure UUID"    
+        return self._figureId 
 
     @property 
     def name(self): 
@@ -97,13 +99,13 @@ class Player(object):
         if type(value) == str:
             self._name = value
         else:
-            raise Exception("Error Playername has to be Type Str")
+            raise Exception("Error Figurename has to be Type Str")
 
-class Bot(Player):
+class Bot(Figure):
     """ Used for Bots in the AI """
     pass
 
-class gamer(Player):
+class gamer(Figure):
     "Real Person that Plays"
     def __init__(self):
         super(gamer, self).__init__()
@@ -115,8 +117,8 @@ class gamer(Player):
         self._ppReg = 0 # Perseverance Point Recharge
         self._price = 0 # Price
         self._level = 0 # Level
-        self._ep = 0 # what ever it is ... ask DoDo
-        self._playertyp = 0 # 1 = soldier, 2 = robber, 3 = wizard 
+        self._figuretyp = 0 # 1 = soldier, 2 = robber, 3 = wizard 
+    
 
     @property 
     def hp(self): 
@@ -241,44 +243,44 @@ class gamer(Player):
 
     
     @property 
-    def playertyp(self):
+    def figuretyp(self):
         "1 = soldier, 2 = robber, 3 = wizard "
-        if self._wd == 1:
+        if self._figuretyp == 1:
             return "soldier"
-        elif self._wd == 2:
+        elif self._figuretyp == 2:
             return "robber"
-        elif self._wd == 3:
+        elif self._figuretyp == 3:
             return "wizard"
         else:
             return "not defined"
 
-    @playertyp.setter 
-    def playertyp(self, value):
+    @figuretyp.setter 
+    def figuretyp(self, value):
         if type(value) == str:
             if value == "soldier":
-                self._playertyp = 1
+                self._figuretyp = 1
             elif value == "robber":
-                self._playertyp = 2
+                self._figuretyp = 2
             elif value == "wizard":
-                self._playertyp = 3
+                self._figuretyp = 3
             else:
-                self._playertyp = 0
+                self._figuretyp = 0
         else:
-            raise Exception("Error playertype has to be type str >> 1 = soldier, 2 = robber, 3 = wizard ")
+            raise Exception("Error figuretype has to be type str >> 1 = soldier, 2 = robber, 3 = wizard ")
 
 def main():
-    Phelper = PlayerHelper()
+    Fhelper = FiguresHelper()
 
-    testPlayer = Phelper.get_new_Wizard()
-    testPlayer.name = "Oerb"
-    testPlayer2 = Phelper.get_new_Soldier()
-    testPlayer2.name = "DoDo"
+    testFigure = Fhelper.get_new_Wizard()
+    testFigure.name = "Oerb"
+    testFigure2 = Fhelper.get_new_Soldier()
+    testFigure2.name = "DoDo"
     # print testPlayer.playertyp, testPlayer.playerId, testPlayer.name, testPlayer.hp, testPlayer.pp
-    playerlist = Phelper.get_Playerlist()
-    print "The Player UUID's are: " , playerlist.keys()
+    figurelist = Fhelper.get_Figurelist()
+    print "The Player UUID's are: " , figurelist.keys()
     print 2*"\n"
-    for playerkey in playerlist.keys():
-        print playerlist[playerkey].name, playerlist[playerkey].playertyp
+    for figurekey in figurelist.keys():
+        print figurelist[figurekey].name, figurelist[figurekey].figuretyp
 
 if __name__ == "__main__":
     main()
