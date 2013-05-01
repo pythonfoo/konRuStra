@@ -41,3 +41,17 @@ Figure:
 ############################################################################
 Dieses Projekt benutzt zum Einrücken Tabs und ist in Python 2.7 geschrieben!
 ############################################################################
+Wichtige Variabeln:
+
+Name: world
+Typ: Dictonary
+Inhalt: Eigenschaften der Welt aufgeteilt in Nummerierte Felder
+
+Name: Figure
+Typ: Dictonary
+Inhalt: Eigenschaften der Figur 
+
+Name: Player
+Typ: Dictonary
+Inhalt: Eigenschaften des Spielers wie z.B. Name, Geld oder Level
+############################################################################
