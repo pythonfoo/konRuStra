@@ -7,6 +7,52 @@ __license__ = "GPL"
 
 import uuid # UniceIdentify Objects
 
+class PlayerHelper(object):
+    "gives Methods to get default Figures and other Figuremanipulations"
+    def __init__(self):
+        pass
+
+    def get_new_Soldier(self):
+        "returns a new Soldier with defaults"
+        soldier = gamer()
+        soldier.hp = 1250
+        soldier.pp = 250
+        soldier.wd = 1
+        soldier.soa = 50
+        soldier.hpReg = 3
+        soldier.ppReg = 1
+        soldier.price = 500
+        soldier.ep = 0
+        soldier.playertyp = "soldier"
+        return soldier
+
+    def get_new_Robber(self):
+        "returns a new Robber with defaults"
+        robber = gamer()
+        robber.hp = 750
+        robber.pp = 750 
+        robber.wd = 2
+        robber.soa = 45
+        robber.hpReg = 2
+        robber.ppReg = 2
+        robber.price = 500
+        robber.ep = 0
+        robber.playertyp = "robber"
+        return robber
+
+    def get_new_Wizard(self):
+        "returns a new Wizard with defaults"
+        wizard = gamer()
+        wizard.hp = 1000
+        wizard.pp = 500
+        wizard.wd = 3
+        wizard.soa = 40
+        wizard.hpReg = 1
+        wizard.ppReg = 3
+        wizard.price = 500
+        wizard.ep = 0
+        wizard.palyertyp = "wizard"
+        return wizard
 
 class Player(object):
     """ Dataclass for every Player to store and give data to every Player"""
@@ -199,10 +245,11 @@ class gamer(Player):
             raise Exception("Error playertype has to be type str >> 1 = soldier, 2 = robber, 3 = wizard ")
 
 def main():
-    testPlayer = gamer()
+    Phelper = PlayerHelper()
+
+    testPlayer = Phelper.get_new_Wizard()
     testPlayer.name = "Oerb"
-    testPlayer.hp = 20
-    print testPlayer.playerId, testPlayer.name, testPlayer.hp, testPlayer.pp
+    print testPlayer.playertyp, testPlayer.playerId, testPlayer.name, testPlayer.hp, testPlayer.pp
 
 
 if __name__ == "__main__":
