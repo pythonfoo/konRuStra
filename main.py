@@ -1,5 +1,8 @@
 #!/usr/bin/env python
-
+# Projektname:               konRuStra
+# Projektinitiator:          dodo
+# Projektteilnehmer:         oerb, dodo, bison
+# Projektlizenz:             Creative Commons by-nc-sa
 import os
 import time
 import random
@@ -8,19 +11,25 @@ import datetime
 import math
 		
 class main(object):
-	def userInputSelect(self,player):
+	def userInputSelect(self,player,world):
 		#"give 1000" for Example
 		code = raw_input(': ')
 		code = code.split(' ')
-		if code[1].isdigit():
-			code[1] = int(code[1])
-		# code[0] = command
-		# code[1] = value
-		com = ["giveEP","giveGold","giveHP","setSOA"]
-		if code[0] == com[0]:
-			self.giveEP(player,code[1])
-			return player	
-				
+		if len(code) == 2: # Earn resources
+			if code[1].isdigit():
+				code[1] = int(code[1])
+			# code[0] = command
+			# code[1] = value
+			com = ["giveEP","giveGold","giveHP","setSOA"]
+			if code[0] == com[0]:
+				self.giveEP(player,code[1])
+				return player	
+		elif len(code) == 3: # manipulate world
+			# code[0] = command
+			# code[1] = x-coordinate
+			# code[2] = y-coordinate	
+			com = ['setSoldier','setRobber','setWizard']
+			
 	
 	
 	def giveEP(self,player,ep):

@@ -1,6 +1,8 @@
 konRuStra
 =========
-
+Projektname:                        konRuStra
+Projektinitiator/Projekturheber:    dodo
+Projektlizenz:                      Creative Commons by-nc-sa
 Ein Rundenbasiertes Strategiespiel in der Konsole.
 <h3>Zielsetzung:</h3>
 * mehrere verschiedene Spielerklassen: Soldat (soldier) Schurke (robber) Magier (wizard)
@@ -33,4 +35,10 @@ play soll nur Funktionen, die aus test oder main <br>
 stammen, sinnvoll aufrufen. Wenn möglich auch wieder schön in <br>
 eine Klasse verpackt. 
 </p>
+<p>
+Für Entwickler gibt es die Datei notes.txt. In ihr werden die Ideen
+des Initiators beschrieben. Außerdem dient die Datei als Handbuch
+für das Projekt.
+</p>
+
 
