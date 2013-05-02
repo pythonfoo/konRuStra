@@ -5,7 +5,7 @@ __author__ = "oerb"
 __copyright__ = "GPL 2013"
 __license__ = "GPL" 
 
-__all__ = ["PlayerHelper"]
+__all__ = ["FigureHelper"]
 
 import uuid # UniceIdentify Objects
 
@@ -15,26 +15,26 @@ class FiguresHelper(object):
         self._figurelist = {}
 
     def _figure_add(self, figurevalue):
-        "add Player to Playerlist"
+        "add figure to figurelist"
         if isinstance(figurevalue,Figure):
             self._figurelist[figurevalue.figureId] = figurevalue
         else:
-            raise Exception("Error type Player hast to be instance of Player Object")
+            raise Exception("Error type figurevalue hast to be instance of Figure Object")
     
     def figure_remove(self, figurevalue): 
-        "removes Player from Playerlist"
+        "removes Figure from Figurelist"
         if isinstance(figurevalue, Figure):
             self._figurelist.pop(figurevalue.figureId, None)
         else:
-            raise Exception("Error type Player hast to be instance Player Object")
+            raise Exception("Error type figurevalue hast to be instance of Figure Object")
 
     def get_Figurelist(self):
-        "returns intern Playerlist - must be replaced by inteligent Methods"
-        #TODO: nomore return of intern Playerlist just uses Methods to manipulate
+        "returns intern figurelist - must be replaced by inteligent Methods"
+        #TODO: nomore return of intern Figurelist just uses Methods to manipulate
         return self._figurelist
 
     def get_new_Soldier(self):
-        "returns a new Soldier with defaults and adds to Playerlist"
+        "returns a new Soldier with defaults and adds to Figurelist"
         soldier = gamer()
         soldier.hp = 1250
         soldier.pp = 250
@@ -48,7 +48,7 @@ class FiguresHelper(object):
         return soldier
 
     def get_new_Robber(self):
-        "returns a new Robber with defaults and adds to Playerlist"
+        "returns a new Robber with defaults and adds to Figurelist"
         robber = gamer()
         robber.hp = 750
         robber.pp = 750 
@@ -62,7 +62,7 @@ class FiguresHelper(object):
         return robber
 
     def get_new_Wizard(self):
-        "returns a new Wizard with defaults and adds to Playerlist"
+        "returns a new Wizard with defaults and adds to Figurelist"
         wizard = gamer()
         wizard.hp = 1000
         wizard.pp = 500
@@ -103,7 +103,7 @@ class Bot(Figure):
     pass
 
 class gamer(Figure):
-    "Real Person that Plays"
+    "Figures for Real Person that Plays"
     def __init__(self):
         super(gamer, self).__init__()
         self._hp = 0 # Health Points
@@ -260,9 +260,8 @@ def main():
     testFigure.name = "Oerb"
     testFigure2 = Fhelper.get_new_Soldier()
     testFigure2.name = "DoDo"
-    # print testPlayer.playertyp, testPlayer.playerId, testPlayer.name, testPlayer.hp, testPlayer.pp
     figurelist = Fhelper.get_Figurelist()
-    print "The Player UUID's are: " , figurelist.keys()
+    print "The Figure  UUID's are: " , figurelist.keys()
     print 2*"\n"
     for figurekey in figurelist.keys():
         print figurelist[figurekey].name, figurelist[figurekey].figuretyp
