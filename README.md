@@ -1,9 +1,11 @@
 konRuStra
 =========
-Projektname:                        konRuStra
-Projektinitiator/Projekturheber:    dodo
-Projektlizenz:                      Creative Commons by-nc-sa
-Ein Rundenbasiertes Strategiespiel in der Konsole.
+<p>
+Projektname:                        konRuStra <br>
+Projektinitiator/Projekturheber:    dodo <br>
+Projektlizenz:                      Creative Commons by-nc-sa <br>
+</p>
+Ein Rundenbasiertes Strategiespiel in der Konsole.<br>
 <h3>Zielsetzung:</h3>
 * mehrere verschiedene Spielerklassen: Soldat (soldier) Schurke (robber) Magier (wizard)
 * Erfahrungspunktesystem (Funktion: experienceGen, giveEP)
