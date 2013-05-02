@@ -3,16 +3,23 @@
 # Projektinitiator:          dodo
 # Projektteilnehmer:         oerb, dodo, bison
 # Projektlizenz:             Creative Commons by-nc-sa
+
 import os
 import time
 import random
 import sys
 import datetime
 import math
-		
+import uuid		
+
 class main(object):
-	def userInputSelect(self,player,world):
-		#"give 1000" for Example
+
+	def __init__(self):
+		os.system('clear')
+		self.figures = {}
+		self.figures = self.defaultFigures(self.figures)
+	def userInputSelect(self,player):
+		#"giveEP 1000" for Example
 		code = raw_input(': ')
 		code = code.split(' ')
 		if len(code) == 2: # Earn resources
@@ -57,11 +64,6 @@ class main(object):
 		world[field]['occFig'] = None
 		world[field]['aff'] = None
 		return {'world':world,'op':oPlayer,'dp':dPlayer}
-
-	def __init__(self):
-		os.system('clear')
-		self.figures = {}
-		
 	
 	def randomCube(self,numOfCube,sizeOfCube):	
 		result = []
@@ -165,12 +167,16 @@ class main(object):
 		
 	def newPlayer(self,name,ep,level,money,difficulty,numS,numR,numW):
 		player = {}
+		player['inv2'] = {}
 		player['name'] = name
 		player['level'] = level
 		player['money'] = money
 		player['difficulty'] = difficulty
 		player['inv'] = {'s':numS,'r':numR,'w':numW}
 		player['ep'] = ep
+		for i in range(numS):
+			FS = self.figures['soldier']
+			player['inv2'][uuid.uuid4()] = FS
 		return player
 		
 	def defaultPlayer(self):
@@ -178,16 +184,24 @@ class main(object):
 		return player
 		
 	def newFig(self,name,hp,pp,wd,soa,hpReg,ppReg,price):
-	# name = Name
-	# hp = Healt Point
-	# pp = Perseverance Point
-	# wd = Weapon Distance
-	# soa = Strength of arms
-	# hpReg = Health Point Recharge
-	# ppReg = Perseverance Point Recharge
-	# price = Price
+		# name = Name
+		# hp = Healt Point
+		# pp = Perseverance Point
+		# wd = Weapon Distance
+		# soa = Strength of arms
+		# hpReg = Health Point Recharge
+		# ppReg = Perseverance Point Recharge
+		# price = Price
 		self.figures[name] = {'HP':hp,'HPReg.':hpReg,'PP':pp,'PPReg.':ppReg,'WD':wd,'SoA':soa,'Price':price}
-	
+		self.figure[name] = {}
+		self.figure[name]['name'] = name
+		self.figure[name]['HP'] = hp
+		self.figure[name]['PP'] = pp
+		self.figure[name]['PPReg'] = ppReg
+		self.figure[name]['HPReg'] = hpReg
+		self.figure[name]['WD'] = wd
+		self.figure[name]['SoA'] = soa
+		self.figure[name]['Price'] = price
 	def defaultFigures(self,figures):
 		figures['soldier'] = {'HP':1250,'PP':250,'WD':1,'SoA':50,'HPReg':3,'PPReg':1,'Price':500}
 		figures['robber'] = {'HP':750,'PP':750,'WD':2,'SoA':45,'HPReg':2,'PPReg':2,'Price':500}
@@ -222,11 +236,14 @@ class main(object):
 			inv['r'] += 1
 		return {'money':gold,'inv':inv}
 m = main()
-player = m.defaultPlayer()
-player = m.userInputSelect(player)
-epSteps = m.experienceGen()
-player['level'] = m.levelTest(epSteps,player['ep'],player['level'])
-m.printDict(player)
+#player = m.defaultPlayer()
+#player = m.userInputSelect(player)
+#epSteps = m.experienceGen()
+#player['level'] = m.levelTest(epSteps,player['ep'],player['level'])
+#m.printDict(player)
+player = m.newPlayer('dodo',1000,1,1000,1,10,0,0)
+for key in player['inv2']:
+	print key
 '''
 if __name__ == '__main__':
 	print 'nothing at all, yet'
