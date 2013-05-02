@@ -8,6 +8,21 @@ import datetime
 import math
 		
 class main(object):
+	def userInputSelect(self,player):
+		#"give 1000" for Example
+		code = raw_input(': ')
+		code = code.split(' ')
+		if code[1].isdigit():
+			code[1] = int(code[1])
+		# code[0] = command
+		# code[1] = value
+		com = ["giveEP","giveGold","giveHP","setSOA"]
+		if code[0] == com[0]:
+			self.giveEP(player,code[1])
+			return player	
+				
+	
+	
 	def giveEP(self,player,ep):
 		player['ep'] += ep
 		return player
@@ -150,7 +165,7 @@ class main(object):
 		return player
 		
 	def defaultPlayer(self):
-		player = self.newPlayer('Human',1,1000,1,0,0,0)
+		player = self.newPlayer('Human',0,1,1000,1,0,0,0)
 		return player
 		
 	def newFig(self,name,hp,pp,wd,soa,hpReg,ppReg,price):
@@ -196,7 +211,13 @@ class main(object):
 			gold -= figures['robber']['Price']
 			inv['r'] += 1
 		return {'money':gold,'inv':inv}
-
+m = main()
+player = m.defaultPlayer()
+player = m.userInputSelect(player)
+epSteps = m.experienceGen()
+player['level'] = m.levelTest(epSteps,player['ep'],player['level'])
+m.printDict(player)
+'''
 if __name__ == '__main__':
 	print 'nothing at all, yet'
-
+'''

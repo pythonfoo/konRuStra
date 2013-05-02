@@ -59,4 +59,9 @@ Es ist eine besondere Eigenschaft und auch ein Alleinstellungsmerkmal dieses
 Projektes, dass es keine Spieleengine oder extra zu installierende Bibliothek
 benutzt, um dem Nutzer größtmöglichen Komfort zu liefern. Dieser Grundsatz
 soll beim Entwickeln beachtet werden.
-############################################################################ 
+############################################################################
+Der Benutzer soll am Anfang einen Schwierigkeitsgrad wählen können, der sich
+auf die Werte der Figuren, die Erfahrungspunktkurve und das Startkapital
+auswirkt. Es soll außerdem eine Reihe geheimer Befehle geben mit denen der
+Benutzer sich einen Vorteil verschaffen kann.
+############################################################################
