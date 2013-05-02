@@ -187,6 +187,7 @@ class main(object):
 	# ppReg = Perseverance Point Recharge
 	# price = Price
 		self.figures[name] = {'HP':hp,'HPReg.':hpReg,'PP':pp,'PPReg.':ppReg,'WD':wd,'SoA':soa,'Price':price}
+	
 	def defaultFigures(self,figures):
 		figures['soldier'] = {'HP':1250,'PP':250,'WD':1,'SoA':50,'HPReg':3,'PPReg':1,'Price':500}
 		figures['robber'] = {'HP':750,'PP':750,'WD':2,'SoA':45,'HPReg':2,'PPReg':2,'Price':500}
