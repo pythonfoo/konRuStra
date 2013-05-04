@@ -30,6 +30,12 @@ test war für Entwickler gedacht, die ein wenig rumspielen <br>
 wollen
 </p>
 
+<h5>userInput</h5>
+<p>
+Regelt die Interaktion mit dem User und benutzt dabei main und test. <br>
+Wird in play verwendet. <br>
+</p>
+
 <h5>play</h5>
 <p>
 Reduziert sich auf die für das Spiel wichtigen Funktionen <br>
