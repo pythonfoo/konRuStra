@@ -4,7 +4,10 @@ Dieser Text kann als Leitwerk für potenzielle Entwickler gesehen werden, da
 dodonator, der Initiator dieses Projekts, seine Ideen und Wünsche für dieses
 Projekt hier festgehalten hat. Es ist wichtig, dass alle Erweiterungen dieser
 Datei und ihren Inhalt genügen. Es ist das Grundgerüst des Spiels abgebildet
-und trotzdem gibt es noch genug Platz für freie Interpretierung.
+und trotzdem gibt es noch genug Platz für freie Interpretierung. Der Quellcode
+soll so geschrieben sein, dass Entwickler sehr einfach den Code verbessern
+können. So soll gewährleistet sein, dass das Projekt von möglichst vielen ver-
+bessert werden kann.
 ############################################################################
 Auf einem Quadratischen Feld werden Figuren (ähnlich wie beim Schach)
 über verschiedene Felder gespielt.
