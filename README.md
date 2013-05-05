@@ -3,7 +3,7 @@ konRuStra
 <p>
 Projektname:                        konRuStra <br>
 Projektinitiator/Projekturheber:    dodo <br>
-Projektlizenz:                      Creative Commons by-nc-sa <br>
+Projektlizenz:                      GPLv3 <br>
 </p>
 Ein Rundenbasiertes Strategiespiel in der Konsole.<br>
 <h3>Zielsetzung:</h3>
