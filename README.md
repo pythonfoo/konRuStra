@@ -16,7 +16,7 @@ Ein Rundenbasiertes Strategiespiel in der Konsole.<br>
 * am besten als Packet gepackt
 * einfache Bedienung
 * Lokalisierte Versionen
-* eine Konfigurationsdatei, welche die Werte für play enthält und kommentiert ist
+* eine Konfigurationsdatei, welche die Werte für play enthält und kommentiert ist <br>
 Der Code soll aus drei einfachen Klassen bestehen:
 
 <h5>main</h5> 
